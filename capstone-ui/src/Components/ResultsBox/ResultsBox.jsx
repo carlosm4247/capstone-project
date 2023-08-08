@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react';
-import { useParams } from "react-router-dom"
+import { useContext, useState } from 'react';
 import electionResults from "../../Data/2020presidential.json"
 import "./ResultsBox.css"
 import { unclickables } from '../../constants.js';
@@ -116,12 +115,12 @@ export default function ResultsBox( { locationLevel, countyFIPS, selectedCandida
               </tr>
             </thead>
             <tbody>
-              {candidates.slice(0, candidatesShowing).map((candidate) => (
+              {candidates.slice(0, Math.min(candidatesShowing, candidates.length)).map((candidate) => (
                 <tr key={candidate.key}
                     onClick={() => handleClick(candidate.key, candidate.name, event)}
                     className={ (selectedCandidates && (selectedCandidates.some((c) => c.key === candidate.key))) ? "selected" : ""}
                     >
-                  <td>{candidate.name}</td>
+                  <td>{candidate.name != "None of these candidates" ? (candidate.name) : ("Independent")}</td>
                   <td>{candidate.voteCount}</td>
                   <td>{candidate.percentage}</td>
                 </tr>

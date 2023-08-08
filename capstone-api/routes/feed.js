@@ -20,15 +20,12 @@ router.get("/news", async (req, res) => {
         page_size: 20
     };
 
-    if (loggedIn === "false") {
-        baseParams.sources = "foxnews.com,wsj.com,nytimes.com,cnn.com,npr.org,washingtonpost.com,apnews.com,msnbc.com";
-    }
-
     const parsedQuery = JSON.parse(query);
 
     if (loggedIn === "true") {
         constructedQuery = parsedQuery.map((tag) => `"${tag}"`).join(" OR ");
     } else {
+        baseParams.sources = "foxnews.com,wsj.com,nytimes.com,cnn.com,npr.org,washingtonpost.com,apnews.com,msnbc.com";
         constructedQuery = "politics";
     }
 

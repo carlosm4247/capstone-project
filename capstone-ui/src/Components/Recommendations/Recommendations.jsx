@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import './Recommendations.css';
 import { questionsWithOptions, partiesOrganized } from '../../constants';
 import { UserContext } from '../../UserContext';
@@ -87,8 +87,11 @@ export default function Recommendations() {
                 maxClicks += clicks;
             }
 
-            const normalizedClicks = user.candidates[candidate.name][0]/maxClicks
+            let normalizedClicks = 0;
 
+            if (maxClicks != 0) {
+                normalizedClicks = user.candidates[candidate.name][0] / maxClicks;
+            }
         
             const score = userWeight * userSimilarity + followedWeight * followedSimilarity + partyWeight * partySimilarity + clicksWeight * normalizedClicks;
         

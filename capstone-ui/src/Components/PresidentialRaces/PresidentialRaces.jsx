@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import InteractiveMap from "../InteractiveMap/InteractiveMap";
 import ResultsBox from "../ResultsBox/ResultsBox";
 import CandidateView from "../CandidateView/CandidateView";

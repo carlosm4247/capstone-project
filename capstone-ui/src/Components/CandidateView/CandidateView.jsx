@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import FollowButton from "../FollowButton/FollowButton.jsx";
 import candidateData from '../../Data/candidates.json';
 import "./CandidateView.css"

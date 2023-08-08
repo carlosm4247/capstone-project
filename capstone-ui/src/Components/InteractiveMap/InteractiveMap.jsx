@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import * as topojson from 'topojson-client';
 import usData from '../../data/us.json';
 import "./InteractiveMap.css";

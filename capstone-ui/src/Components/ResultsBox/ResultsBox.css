@@ -8,3 +8,7 @@
 .selected {
     background-color: red;
 }
+
+tbody {
+    cursor: pointer;
+}
