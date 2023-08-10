@@ -1,25 +1,42 @@
+.presidential-races {
+    display: flex;
+    flex-direction: column;
+}
+
 .map-container {
     margin-bottom: 10px;
+}
+
+.results-container h2 {
+    color: #FFFFFF;
 }
   
 .info {
     display: flex;
     flex-direction: row; 
+    margin-top: 20px;
 }
   
 .results-container {
-    max-width: 300px;
-    margin-right: 20px;
+    flex: 1;
+    max-width: 400px;
 }
   
 .candidate-comparison-container {
     flex: 2;
-    margin-top: 10px; 
+    flex-wrap: wrap;
     display: flex;
 }
   
 .candidate-view {
     flex: 1;
-    max-width: calc(50% - 10px);
+    max-width: calc(43% - 10px);
     margin-right: 10px;
+}
+
+.back-button {
+    position: absolute;
+    top: 62%; 
+    left: 53%; 
+    z-index: 0;
 }

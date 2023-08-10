@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import { UserContext } from "../../UserContext.js";
 import "./FollowingPopup.css";
+import FollowButton from "../FollowButton/FollowButton.jsx"
 
 export default function FollowingPopup( { handleClosePopup }) {
 
     const { user } = useContext(UserContext);
 
     return (
+        <>
+        <div className="overlay"></div>
         <div className="popup">
             <div className="popup-content">
                 <span className="close" onClick={handleClosePopup}>
@@ -14,15 +17,19 @@ export default function FollowingPopup( { handleClosePopup }) {
                 </span>
                 <h2>Followed Candidates: </h2>
                 {user.following.length > 0 ? (
-                    <ul>
+                    <div>
                         {user.following.map((candidate) => (
-                            <li key={candidate}>{candidate}</li>
+                            <div key={candidate} className='followed-candidate'>
+                                <span className='followed-candidate-name'>{candidate}</span>
+                                <FollowButton candidateName={candidate} />
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 ) : (
                     <p>No candidates followed yet.</p>
                 )}
             </div>
         </div>
+        </>
     )
 }

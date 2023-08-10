@@ -1,8 +1,9 @@
 .candidate-view {
-    border: 1px solid #ddd;
+    border: 1px solid #FFFFFF;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px auto;
+    margin: 0px 20px 20px 20px;
+    background-color: #022031;
 }
   
 .topbar {
@@ -13,6 +14,7 @@
 .candidate-name {
     font-size: 20px;
     font-weight: bold;
+    color: #D91240;
 }
   
 .categories {
@@ -22,17 +24,17 @@
 .category {
     padding: 10px 20px;
     cursor: pointer;
-    border: 1px solid #ddd;
+    border: 1px solid #FFFFFF;
     border-radius: 10px 10px 0 0;
     margin-right: 5px;
 }
   
 .category.selected {
-    background-color: grey;
+    background-color: #1771C5;
 }
   
 .category-content {
-    border: 1px solid #ddd;
+    border: 1px solid #FFFFFF;
     border-radius: 0 0 10px 10px;
     padding: 20px;
 }
@@ -43,16 +45,18 @@
   
 .stances-content > div {
     margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #FFFFFF;
     padding-bottom: 20px;
 }
   
 .stances-content p {
     margin: 0;
     font-weight: bold;
+    color: #D91240;
 }
   
 .stances-content p:last-child {
     font-weight: normal;
     margin-top: 5px;
+    color: #FFFFFF;
 }

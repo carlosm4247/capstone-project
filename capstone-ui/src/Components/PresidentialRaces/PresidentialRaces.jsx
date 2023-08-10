@@ -3,6 +3,7 @@ import InteractiveMap from "../InteractiveMap/InteractiveMap";
 import ResultsBox from "../ResultsBox/ResultsBox";
 import CandidateView from "../CandidateView/CandidateView";
 import "./PresidentialRaces.css";
+import electionResults from "../../Data/2020presidential.json";
 
 export default function PresidentialRaces({ selectedCandidates, setSelectedCandidates }) {
 
@@ -16,6 +17,7 @@ export default function PresidentialRaces({ selectedCandidates, setSelectedCandi
             setLocationLevel(1);
             setSelectedState(null); 
             setSelectedCandidates([]);
+            setStateName(null);
         }
         setShowBackButton(bool);
     }
@@ -39,10 +41,14 @@ export default function PresidentialRaces({ selectedCandidates, setSelectedCandi
                     selectedState={selectedState}
                     setSelectedState={setSelectedState}
                 />
-                {showBackButton && (<button onClick={() => handleBackButton(false)}>Back</button>)}
+                {showBackButton && (<button className="back-button" onClick={() => handleBackButton(false)}>Back</button>)}
             </div>
             <div className="info">
                 <div className="results-container">
+                    {stateName != null ? 
+                        (<h2>{electionResults.data.races.find((race) => race.state_slug === stateName).state_name} Results</h2>) 
+                        : 
+                        (<h2>Country Results</h2>)}
                     <ResultsBox 
                         locationLevel={locationLevel}
                         selectedCandidates={selectedCandidates}

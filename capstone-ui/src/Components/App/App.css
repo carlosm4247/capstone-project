@@ -1,33 +1,55 @@
 
 #root {
-  max-width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
   text-align: center;
 }
 
 .app {
-  width: auto;
   min-height: 100vh;
-  padding: 1rem;
 }
 
 .navbar {
-  display: inline-flex;
-  position: relative;
-  align-items: center;
+  display: flex;
   justify-content: space-between;
-  width: 100%;
-  border-bottom: solid 1px white;
-  border-width: 100%;
+  align-items: center;
+  padding: 1rem;
+  background-color: #022031;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+}
+
+.title {  
+  font-size: 3rem;
+  font-weight: bold;
+  color: #D92140;
+  margin: 0;
 }
 
 .profile {
   display: flex; 
   justify-content: space-between; 
   align-items: center;
-  border: 1px solid white; 
+  border: 1px solid #FFFFFF; 
   padding: 10px;
+  background-color: #022031;
+  border-radius: 8px; 
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile:hover {
+  transform: scale(1.02);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  align-items: center;
+  color: #D92140;
+}
+
+.username {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
 }
 
 .following-list {
@@ -35,6 +57,15 @@
   text-decoration: underline;
 }
 
+.following-list:hover {
+  text-decoration: none;
+}
+
 .loggedin-home {
   display: flex;
+  width: 100%;
+}
+
+.content {
+  margin-top: 20px;
 }

@@ -3,12 +3,35 @@
     border: 1px solid white;
     padding: 0.4em 1em;
     width: fit-content;
+    background-color: #022031;
 }
 
-.selected {
-    background-color: red;
+thead {
+    color: #1771C5;
+}
+
+.candidates.selected {
+    color: #D92140;
+}
+
+.candidates {
+    transition: color 0.3s ease-in-out;
+}
+
+.candidates:hover {
+    color: #D92140;
 }
 
 tbody {
     cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 0.5em;
+    text-align: left;
 }

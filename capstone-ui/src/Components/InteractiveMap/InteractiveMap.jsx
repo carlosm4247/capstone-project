@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import * as topojson from 'topojson-client';
 import usData from '../../data/us.json';
 import "./InteractiveMap.css";
-import { fipsStateCodes } from '../../constants';
+import { fipsStateCodes, presidentialStateWins } from '../../constants';
 import StateMap from '../StateMap/StateMap';
 
 export default function InteractiveMap({ handleLocation, handleState, handleBackButton, selectedState, setSelectedState }) {
@@ -34,7 +34,7 @@ export default function InteractiveMap({ handleLocation, handleState, handleBack
         svg.selectAll('.state')
           .data(states)
           .enter().append('path')
-          .attr('class', (d) => `state ${selectedState === fipsStateCodes[d.id] ? 'selected' : ''}`)
+          .attr('class', (d) => `state ${presidentialStateWins[fipsStateCodes[d.id]] == "democrat" ? 'democrat' : 'republican'}`)
           .attr('d', path)
           .on('click', function(d) {
             const stateName = fipsStateCodes[d.id];

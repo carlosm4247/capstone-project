@@ -9,12 +9,14 @@
     flex-direction: column;
     width: 300px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #FFFFFF;
     border-radius: 10px;
+    background-color: #022031;
 }
 
 .login-form h2 {
     text-align: center;
+    color: #D92140;
 }
 
 .login-form .form-group {
@@ -28,6 +30,7 @@
     font-weight: bold;
     text-align: left;
     flex: 1;
+    color: #FFFFFF;
 }
 
 .login-form input {
@@ -35,15 +38,19 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     flex: 2;
+    color: #FFFFFF;
+    background-color: #1a1a1a;
 }
 
 .login-form button {
     margin-top: 10px;
     padding: 10px;
     width: 100%;
-    background-color: #007bff;
-}
-
-.login-form button:hover {
-    border-color: white;
+    background-color: #1771C5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #FFFFFF;
+    transition: color 0.3s ease-in-out;
+    align-self: center;
 }

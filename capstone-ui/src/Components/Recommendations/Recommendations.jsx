@@ -112,15 +112,18 @@ export default function Recommendations() {
 
     return (
         <div className='recommendations-container'>
-            <h3>Recommendations</h3>
+            <div className='recommendations-title'>Recommendations</div>
             {topThreeCandidates.length > 0 ? (
                 <div>
                     {topThreeCandidates.map(candidate => (
-                        <div key={candidate.name}>{candidate.name} <FollowButton candidateName={candidate.name}/></div>
+                        <div key={candidate.name} className='recommended-candidate'>
+                            <span className='recommended-candidate-name'>{candidate.name}</span>
+                            <FollowButton candidateName={candidate.name} />
+                        </div>
                     ))}
                 </div>
             ) : (
-                <p>"No recommendations right now"</p>
+                <p className='no-recommendations'>"No recommendations right now"</p>
             )}
         </div>
     );

@@ -1,10 +1,34 @@
+.recommendations {
+    width: 25%;
+}
+
 .recommendations-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     border: 1px solid white;
     border-radius: 10px;
-    margin: 15px;
-    width: 20%;
     height: fit-content;
+
+    padding: 20px;
+    background-color: #022031;
+}
+
+.recommendations-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #D92140;
+    text-align: center;
+}
+
+.recommended-candidate {
+    font-size: 18px;
+    color: #fff;
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recommended-candidate-name {
+    margin-right: 8px;
+    font-weight: bold;
 }

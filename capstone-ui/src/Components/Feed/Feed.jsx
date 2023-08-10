@@ -85,9 +85,9 @@ export default function Feed ( { loggedin }) {
 
     return (
         <div className="feed-container">
-            <h3>Feed</h3>
-            <ul>
-                {articles ? (articles
+            <div className="feed-title">Feed</div>
+            <div>
+                {articles.length > 0 ? (articles
                 .filter((article, index, self) =>
                 index === self.findIndex((a) => a.title === article.title)
                 )
@@ -102,7 +102,7 @@ export default function Feed ( { loggedin }) {
                 ))) : (
                     <p>No articles right now, check later or refresh the page.</p>
                 )}
-            </ul>
+            </div>
             {isFetching && <LoadingFallback />}
             {currentPage < totalPages && (
               <button onClick={handleLoadMore}>Load More</button>

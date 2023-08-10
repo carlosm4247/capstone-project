@@ -56,8 +56,8 @@ export default function App() {
                 {user ? (
                   <div className='profile'>
                     <div className='user-info'>
-                      <div>{user.username}</div>
-                      <div>Zip Code: {user.zipcode}</div>
+                      <div className='username'>{user.username}</div>
+                      <div className='zip-code'>Zip Code: {user.zipcode}</div>
                       <div className="following-list" onClick={handleFollowingListClick}>Candidates Followed: {user.following.length}</div>
                     </div>
                     <div className='logout'>
@@ -71,12 +71,15 @@ export default function App() {
             </div>
             <div className="content">
               <Routes>
-                <Route path='/' element={ user ? (<div className='loggedin-home'>
-                                                    <Feed loggedin={true}/> 
-                                                    <Recommendations /> 
-                                                  </div>) : (
-                                                    <Feed loggedin={false}/>
-                                                  )}/>
+                <Route path='/' element={<div className={`${user ? "loggedin-home" : "" }`}>
+                                          <div className={`feed-wrapper ${user ? 'loggedin-feed' : 'not-loggedin-feed'}`}>
+                                            <Feed loggedin={user ? true : false} />
+                                          </div>
+                                          <div className='recommendations'>
+                                            {user && <Recommendations />}
+                                          </div>
+                                        </div>
+                                      }/>
                 <Route path='/president' element={<PresidentialRaces 
                                                     selectedCandidates={selectedCandidates} 
                                                     setSelectedCandidates={setSelectedCandidates}

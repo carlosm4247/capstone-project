@@ -118,10 +118,10 @@ export default function ResultsBox( { locationLevel, countyFIPS, selectedCandida
               {candidates.slice(0, Math.min(candidatesShowing, candidates.length)).map((candidate) => (
                 <tr key={candidate.key}
                     onClick={() => handleClick(candidate.key, candidate.name, event)}
-                    className={ (selectedCandidates && (selectedCandidates.some((c) => c.key === candidate.key))) ? "selected" : ""}
+                    className={`candidates ${ selectedCandidates && selectedCandidates.some((c) => c.key === candidate.key) ? "selected" : ""}`}
                     >
                   <td>{candidate.name != "None of these candidates" ? (candidate.name) : ("Independent")}</td>
-                  <td>{candidate.voteCount}</td>
+                  <td>{candidate.voteCount.toLocaleString()}</td>
                   <td>{candidate.percentage}</td>
                 </tr>
               ))}

@@ -11,6 +11,7 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
+    background-color: #022031;
 }
 
 .signup-form .form-group {
@@ -24,6 +25,7 @@
     font-weight: bold;
     text-align: left;
     flex: 1;
+    color: #FFFFFF;
 }
 
 .signup-form .form-group .stances {
@@ -36,6 +38,8 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 100%;
+    color: #FFFFFF;
+    background-color: #1a1a1a;
 }
 
 .signup-form input,
@@ -44,15 +48,19 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     flex: 2;
+    color: #FFFFFF;
+    background-color: #1a1a1a;
 }
 
 .signup-form button {
     margin-top: 10px;
     padding: 10px;
     width: 100%;
-    background-color: #007bff;
-}
-
-.signup-form button:hover {
-    border-color: white;
+    background-color: #1771C5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #FFFFFF;
+    transition: color 0.3s ease-in-out;
+    align-self: center;
 }

@@ -4,6 +4,7 @@ import usData from '../../data/us.json';
 import "./StateMap.css";
 import ResultsBox from '../ResultsBox/ResultsBox';
 import { FIPSfromStateName } from '../../constants';
+import electionResults from "../../Data/2020presidential.json"
 
 export default function StateMap({ stateName }) {
 
@@ -41,7 +42,13 @@ export default function StateMap({ stateName }) {
         svg.selectAll('.county')
           .data(counties)
           .enter().append('path')
-          .attr('class', 'county')
+          .attr('class', (d) => {
+            const foundRace = electionResults.data.races.find((race) => race.state_slug === stateName);
+            const foundCounty = foundRace.counties.find((county) => (county.fips % 1000) === (d.id % 1000));
+            const party = foundCounty ? foundCounty.leader_party_id : 'unknown';
+        
+            return `county ${party === "democrat" ? 'democrat' : 'republican'}`;
+          })
           .attr('d', path)
           .on('mouseover', function(d, i, nodes) {
             const [x, y] = d3.mouse(nodes[i]);

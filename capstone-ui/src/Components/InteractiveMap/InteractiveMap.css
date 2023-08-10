@@ -1,9 +1,17 @@
 .state {
     fill: #e3e3e3;
-    stroke: #333;
-    stroke-width: 0.5;
+    stroke: #FFFFFF;
+    stroke-width: 1;
 }
 
 .interactive-map-container {
     position: relative;
+}
+
+.state.democrat {
+    fill: #022031;
+}
+
+.state.republican {
+    fill: #D92140;
 }
